@@ -20,6 +20,9 @@ public class WeatherForecastController : ControllerBase
     }
 
     [MySampleActionFilterAttribute("Weather ForeCast")]
+    [ResourceFileAttribute("Res Weather")]
+    //[ServiceFilter(typeof(SampleResultFilterAttribute))]
+    [TypeFilter(typeof(SampleResultFilterAttribute),Arguments = new object[]{"Action"})]
     [HttpGet(Name = "GetWeatherForecast")]
     public IEnumerable<WeatherForecast> Get()
     {

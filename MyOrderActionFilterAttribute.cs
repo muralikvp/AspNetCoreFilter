@@ -20,12 +20,12 @@ namespace filters
 
         public void OnActionExecuted(ActionExecutedContext context)
         {
-            Console.WriteLine($"On Action Executed - { _name }");
+            Console.WriteLine($"Action Filter -After- { _name }");
         }
 
         public void OnActionExecuting(ActionExecutingContext context)
         {
-            Console.WriteLine($"On Action Executing - { _name }");
+            Console.WriteLine($"On Action Executing -Before { _name }");
         }
     }
 }
