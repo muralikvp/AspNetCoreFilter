@@ -5,6 +5,8 @@ namespace filters.Controllers;
 
 [ApiController]
 [Route("[controller]")]
+[MySampleActionFilterAttribute("Weather ForeCast")]
+
 public class WeatherForecastController : ControllerBase
 {
     private static readonly string[] Summaries = new[]
@@ -19,10 +21,9 @@ public class WeatherForecastController : ControllerBase
         _logger = logger;
     }
 
-    [MySampleActionFilterAttribute("Weather ForeCast")]
-    [ResourceFileAttribute("Res Weather")]
+   // [ResourceFileAttribute("Res Weather")]
     //[ServiceFilter(typeof(SampleResultFilterAttribute))]
-    [TypeFilter(typeof(SampleResultFilterAttribute),Arguments = new object[]{"Action"})]
+   // [TypeFilter(typeof(SampleResultFilterAttribute),Arguments = new object[]{"Action"})]
     [HttpGet(Name = "GetWeatherForecast")]
     public IEnumerable<WeatherForecast> Get()
     {
@@ -34,6 +35,14 @@ public class WeatherForecastController : ControllerBase
         })
         .ToArray();
     }
+
+  [HttpGet ("GetStudentData")]
+    public string GetStudentData()
+    {
+       return "Dotnet Core Student";
+    }
+
+    
 
    
 }

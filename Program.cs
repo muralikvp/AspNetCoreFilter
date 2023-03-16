@@ -5,16 +5,18 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 // builder.Services.AddTransient<SampleResultFilterAttribute>();
 
-builder.Services.AddSingleton<SampleResultFilterAttribute>();
+//builder.Services.AddSingleton<SampleResultFilterAttribute>();
+
+//builder.Services.AddSingleton<SampleResultFilterAttribute>();
 
 
 builder.Services.AddControllers(options =>{
     // options.Filters.Add(new MySampleActionFilter());
      //options.Filters.Add(new MySampleAsyncActionFilterAttribute("Global"));
-     options.Filters.Add(new MyOrderActionFilterAttribute("Order",1));
+    // options.Filters.Add(new MyOrderActionFilterAttribute("Order",1));
 
-     options.Filters.Add(new ResourceFileAttribute("Global"));
-     options.Filters.AddService<SampleResultFilterAttribute>();
+   //  options.Filters.Add(new ResourceFileAttribute("Global"));
+  //   options.Filters.AddService<SampleResultFilterAttribute>();
 
 } );
 

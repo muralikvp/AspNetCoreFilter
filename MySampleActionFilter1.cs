@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace filters
 {
+    //Attribute >> Predefined Class >> Defines We are using this class in Attribute level of Action Filter
+    //IActionFilter >> Predefined Interface >> Uses two methos ActionExecuted and ActionExecuting 
     public class MySampleActionFilterAttribute : Attribute,IActionFilter
     {
         private readonly string _name;
